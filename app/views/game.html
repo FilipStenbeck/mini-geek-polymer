@@ -1,1 +1,9 @@
-<game-info gameId={{gameId}}></game-info>
+<paper-tabs selected="1">
+  <paper-tab ng-click="handleTabClicked($event)" id="videoTab">Video</paper-tab>
+  <paper-tab ng-click="handleTabClicked($event)" id="infoTab">Info</paper-tab>
+  <paper-tab ng-click="handleTabClicked($event)" id="forumTab"> Forum</paper-tab>
+</paper-tabs>
+
+<div ng-show="infoTab">
+	<game-info gameId={{gameId}}></game-info>
+</div>

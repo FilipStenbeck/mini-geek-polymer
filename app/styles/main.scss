@@ -16,6 +16,16 @@ body {
 -webkit-transform: translateZ(0);
 }
 
+paper-tabs {
+  font-weight: bold;
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+
+  paper-tab {
+    cursor: pointer;
+  }
+}
+
+
 [drawer] {
   background-color: #678cb7;
   border-right: 1px solid #ccc;
@@ -71,7 +81,7 @@ core-drawer-panel[narrow] button {
     display:none;
   }
   [ng-view] {
-    padding-left: 5%;
+    padding-left: 15%;
   }
 }
 
