@@ -27,7 +27,7 @@
       <template repeat="{{ result }}">
         <bs-row> 
           <bs-col xs="12" sm="8" md="6" lg="6">
-          <paper-button label="{{name}}" raisedButton></paper-button>
+          <paper-button label="{{name}}" id="{{id}}" on-click="{{onGameClicked}}" raisedButton></paper-button>
           </bs-col>
         </bs-row>
       </template>
@@ -49,9 +49,11 @@
       handleResponse: function (event) {
         this.result = this.$.ajax.response.result;
         this.loaderVisible = 'none';
-      }
+      },
 
-      
+      onGameClicked: function (event) {
+        window.location.href = window.location.origin + '#/gameinfo/' + event.target.id;
+      }
 
     });
 

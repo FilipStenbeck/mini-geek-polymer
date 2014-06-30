@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/popular.html',
         controller: 'PopularCtrl'
       })
+      .when('/gameinfo/:gameId', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
