@@ -81,6 +81,19 @@ core-drawer-panel[narrow] button {
   margin-bottom: 10px;
 }
 
+#forumTab {
+  ul {
+     list-style:none;
+    li {
+      cursor: pointer;
+      max-width: 80%;
+      padding-bottom: 15px;
+      padding-top: 15px; 
+      border-bottom : 2px solid #5379a3; 
+    }
+  }
+}
+
 @media only screen and (min-width: 641px) {  
   core-toolbar {
     display:none;

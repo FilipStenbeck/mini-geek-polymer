@@ -43,3 +43,43 @@ angular
         redirectTo: '/'
       });
   });
+
+  angular.module('miniGeekPolymerApp').factory('GeekService', function ($http) {
+
+    return {
+        
+        //Set URL to the backend service
+       ROOT_URL : 'http://mini-geek-service.appspot.com/',
+        
+        //locally cached data
+        hotList : [],
+        gameId : '',
+        game : {},
+        forumList : [],
+        prev_forumList : [], 
+        selected_node : 'root',
+        prev_forumHeader : '',
+        prev_node : 'root',
+        
+        resetFormList : function () {
+            this.forumList = [];
+            this.selected_node = 'root';
+        },  
+        getforumPosts : function (callback) {
+            var that = this;
+            that.prev_forumList = that.forumList;
+            $http({
+                method : 'GET',
+                url : that.ROOT_URL + 'forumlist',
+                params : {
+                    node :  that.selected_node,
+                    game : that.gameId
+                         
+                }
+            }).success(function (data) {
+                that.forumList = data.result;
+                callback(data);
+            });
+        }  
+    };
+  });
