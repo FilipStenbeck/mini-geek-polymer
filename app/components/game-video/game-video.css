@@ -1,0 +1,25 @@
+:host {
+	overflow-x: hidden;
+  display: block;
+  
+}
+
+img {
+  float: left;
+  margin: 20px;
+}
+
+.extra-padding {
+  padding-top: 30px;
+}
+
+paper-item {
+	width: 90%;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+	line-height: 2em;
+	color: #5379a3;
+	text-decoration:underline;	
+}
+
