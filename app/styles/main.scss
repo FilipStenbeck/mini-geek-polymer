@@ -1,0 +1,73 @@
+ html, body {
+  height: 100%;
+    margin: 0;
+}
+    
+body {
+  font-family: sans-serif;
+}
+
+[drawer] {
+  background-color: #9abfe2;
+  border-right: 1px solid #ccc;
+
+  ul {
+    list-style:none;
+    li {
+      font-size: 1.3em;
+      line-height: 2em;
+      a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+  .minigeek {
+    color: #fff;
+    font-family: holtwood-one-sc, serif !important;
+    font-size: 2em;
+    line-height: 2em;
+    margin-left: 22px;
+  }
+}
+
+[ng-view] {
+  padding: 10px;
+}
+core-toolbar {
+  background-color: #9abfe2;
+  border-bottom: 1px solid #ccc;    
+}
+
+[main] {
+  height: 100%;
+}
+
+button {
+  display: none;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  margin: 8px;
+}
+
+core-drawer-panel[narrow] button {
+  display: inline-block
+}
+
+web-loader {
+  position: absolute;
+  right: 40px;
+  top: 3%;
+}
+@media only screen and (min-width: 641px) {  
+  core-toolbar {
+    display:none;
+  }
+  web-loader {
+    left: 20px;
+    top: 93%;
+  }
+}
+
