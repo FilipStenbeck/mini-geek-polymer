@@ -1,0 +1,37 @@
+{
+  "name": "web-loader",
+  "homepage": "https://github.com/mvaldetaro/web-loader",
+  "authors": [
+    "Magno Valdetaro <mvaldetaro@gmail.com>"
+  ],
+  "description": "Web Component Loaders/Spinners in CSS3 [Web Loader] using Polymer.",
+  "main": "src/web-loader.html",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "loaders",
+    "spinners"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#~0.2.4",
+    "polymer": "Polymer/polymer#~0.2.4"
+  },
+  "_release": "02e2ac5358",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "02e2ac5358aea899a231cdf56c0d75c8ecc829a7"
+  },
+  "_source": "git://github.com/mvaldetaro/web-loader.git",
+  "_target": "*",
+  "_originalSource": "web-loader",
+  "_direct": true
+}
