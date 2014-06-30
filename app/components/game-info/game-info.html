@@ -1,0 +1,83 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="game-info" attributes="gameId">
+  <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+  <link rel="import" href="../../bower_components/web-loader/web-loader.html">
+  <link rel="import" href="../../bower_components/twbs-grid/src/twbs-grid.html">
+  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+  <template>
+
+    <link rel="stylesheet" href="game-info.css" />
+    <content></content>
+
+    <core-ajax
+      id="ajax"
+      auto
+      url="http://mini-geek-service.appspot.com/gameinfo?id={{gameId}}"
+      params='{"alt":"json"}'
+      handleAs="json"
+      on-core-response="{{handleResponse}}">
+    </core-ajax>
+    
+
+    <bs-container>
+      <bs-row> 
+        <bs-col xs="12" sm="10" md="10" lg="10">
+          <web-loader type="clock" display={{loaderVisible}}></web-loader>
+        </bs-col>
+      </bs-row>
+      
+      <bs-row>
+        <bs-col xs="12" sm="8" md="8" lg="8">
+        <h2>{{game.name}}</h2>
+        
+        <a href="http://boardgamegeek.com/boardgame/{{gameId}}" target="_blank">
+          <img src="{{game.thumbnail}}" title="{{game.name}}"></img>
+        </a>
+        <span>{{game.description}}</span>
+        </bs-col>
+      </bs-row>
+      <bs-row class="extra-padding">
+        <bs-col xs="12" sm="8" md="8" lg="8">
+        <hr>
+        </bs-col>
+      </bs-row> 
+      <bs-row>  
+        <bs-col xs="3" sm="2" md="2" lg="2">
+          Rating: <strong>{{game.rating}} </strong>
+        </bs-col>
+        <bs-col xs="3" sm="2" md="2" lg="2">
+          Published: <strong>{{game.yearpublished}} </strong>
+        </bs-col>
+        <bs-col xs="2" sm="2" md="2" lg="2">
+          Players: <strong>{{game.players}} </strong>
+        </bs-col>
+      </bs-row>
+    </bs-container>
+  </template>
+
+  <script>
+
+    Polymer('game-info', {
+      
+      game : {},
+      loaderVisible : 'block',
+
+      ready: function() {
+      
+      },
+
+      handleResponse: function (event) {
+        this.game = this.$.ajax.response.result[0];
+        this.loaderVisible = 'none';
+        if (this.game.description) {
+          this.game.description = this.game.description.replace(/&#10;/g, ' ');
+        }
+        console.log(this.game);
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

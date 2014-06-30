@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="game-list" attributes="notitle">
+<polymer-element name="game-list" attributes="url">
   <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
   <link rel="import" href="../../bower_components/web-loader/web-loader.html">
   <link rel="import" href="../../bower_components/twbs-grid/src/twbs-grid.html">
@@ -38,7 +38,6 @@
 
     Polymer('game-list', {
       
-      url : 'http://mini-geek-service.appspot.com/hotgames',
       result : [],
       loaderVisible : 'block',
 

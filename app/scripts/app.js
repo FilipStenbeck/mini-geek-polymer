@@ -28,8 +28,8 @@ angular
         controller: 'PopularCtrl'
       })
       .when('/gameinfo/:gameId', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/game.html',
+        controller: 'GameCtrl'
       })
       .otherwise({
         redirectTo: '/'
