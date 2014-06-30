@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="game-search" attributes="query">
+  <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+  <link rel="import" href="../../bower_components/web-loader/web-loader.html">
+  <link rel="import" href="../../bower_components/twbs-grid/src/twbs-grid.html">
+  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+  <link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+  
+  <link rel="import" href="../game-list/game-list.html">
+  
+  <template>
+
+    <link rel="stylesheet" href="game-search.css" />
+    <content></content>
+
+    <!-- Search form -->
+    <paper-fab on-click="{{onQueryChange}}" class="mini" icon="arrow-forward"></paper-fab>
+    <paper-input id="searchtext" on-change="{{onQueryChange}}" floatingLabel=true label="Name of the game you are looking for"></paper-input>
+    
+    <!-- Result listing -->
+    <game-list url="http://mini-geek-service.appspot.com/search?query={{query}}"></game-list>
+
+  </template>
+
+  <script>
+
+    Polymer('game-search', {
+      
+      result : [],
+      loaderVisible : 'none',
+
+      ready: function() {
+        this.$.searchtext.value = this.query;
+      },
+
+      onQueryChange: function() {
+        //Use routing to search to be able to use brower history
+        window.location.href = window.location.origin + '#/search/' + this.$.searchtext.value;
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

@@ -27,6 +27,14 @@ angular
         templateUrl: 'views/popular.html',
         controller: 'PopularCtrl'
       })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
+      })
+      .when('/search/:query', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
+      })
       .when('/gameinfo/:gameId', {
         templateUrl: 'views/game.html',
         controller: 'GameCtrl'

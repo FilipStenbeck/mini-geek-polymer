@@ -42,6 +42,7 @@ paper-tabs {
       }
     }
   }
+
   .minigeek {
     color: #fff;
     font-family: holtwood-one-sc, serif !important;
@@ -76,10 +77,15 @@ core-drawer-panel[narrow] button {
   display: inline-block
 }
 
+.extra-margin {
+  margin-bottom: 10px;
+}
+
 @media only screen and (min-width: 641px) {  
   core-toolbar {
     display:none;
   }
+  
   [ng-view] {
     padding-left: 15%;
   }
