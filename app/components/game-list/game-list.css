@@ -1,0 +1,23 @@
+:host {
+	overflow-x: hidden;
+  display: block;
+  
+}
+
+
+    paper-button {
+      
+      width: 95%;
+    }
+
+    paper-button {
+      color: #5379a3;
+      color: #fff;
+    }
+
+    paper-button[raisedButton] {
+      background: #5379a3;
+      color: #fff;
+    }
+
+    

@@ -1,0 +1,60 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="game-list" attributes="notitle">
+  <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+  <link rel="import" href="../../bower_components/web-loader/web-loader.html">
+  <link rel="import" href="../../bower_components/twbs-grid/src/twbs-grid.html">
+  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+  <template>
+
+    <link rel="stylesheet" href="game-list.css" />
+    <content></content>
+
+     <core-ajax
+    id="ajax"
+    auto
+    url="{{url}}"
+    params='{"alt":"json"}'
+    handleAs="json"
+    on-core-response="{{handleResponse}}"></core-ajax>
+    
+
+    <bs-container>
+    <bs-row> 
+          <bs-col xs="12" sm="8" md="6" lg="6">
+            <web-loader type="clock" display={{loaderVisible}}></web-loader>
+          </bs-col>
+      <template repeat="{{ result }}">
+        <bs-row> 
+          <bs-col xs="12" sm="8" md="6" lg="6">
+          <paper-button label="{{name}}" raisedButton></paper-button>
+          </bs-col>
+        </bs-row>
+      </template>
+  </bs-container>
+  </template>
+
+  <script>
+
+    Polymer('game-list', {
+      
+      url : 'http://mini-geek-service.appspot.com/hotgames',
+      result : [],
+      loaderVisible : 'block',
+
+      ready: function() {
+      
+      },
+
+      handleResponse: function (event) {
+        this.result = this.$.ajax.response.result;
+        this.loaderVisible = 'none';
+      }
+
+      
+
+    });
+
+  </script>
+
+</polymer-element>
