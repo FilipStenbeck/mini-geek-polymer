@@ -1,0 +1,25 @@
+:host {
+	overflow-x: hidden;
+  display: block;
+  
+}
+
+paper-fab {
+	float: right;
+	margin-right: 10%;
+}
+
+.extra-padding {
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 960px) {  
+  paper-fab {
+	margin-right: 30%;
+	}
+@media only screen and (min-width: 1200px) {  
+  paper-fab {
+	margin-right: 50%;
+	}	
+}
+

@@ -39,6 +39,14 @@ angular
         templateUrl: 'views/game.html',
         controller: 'GameCtrl'
       })
+      .when('/collection', {
+        templateUrl: 'views/collection.html',
+        controller: 'CollectionCtrl'
+      })
+      .when('/collection/:query', {
+        templateUrl: 'views/collection.html',
+        controller: 'CollectionCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
