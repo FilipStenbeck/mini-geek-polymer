@@ -1,0 +1,5 @@
+<core-icon icon="file-upload" ng-show="showUpArrow()"></core-icon>	
+<h3 id="forum-header" ng-bind-html="to_trusted(forumHeader)" ng-click="getPrevForumPost()"></h3>
+<ul class="posts">
+	<li ng-repeat="post in forumList" ng-click='getNextForumPost(post.id, post.leaf, post.title)' ng-bind-html="to_trusted(post.title)"></li>
+</ul>
