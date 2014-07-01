@@ -33,6 +33,7 @@
       loaderVisible : 'none',
 
       ready: function() {
+        document.querySelector('body').dispatchEvent(new CustomEvent("polymer-ready"));
         this.$.searchtext.value = this.query;
       },
 

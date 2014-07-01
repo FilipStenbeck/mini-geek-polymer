@@ -41,6 +41,8 @@
 
     <!-- Add your site or application content here -->
     
+    <!-- Loader overlay to prevent stuff loking bad before polymer ready -->
+    <div id="overlay"></div>
     <core-drawer-panel>
       <div drawer>
       <span class="minigeek">Mini geek</span> 
@@ -95,5 +97,21 @@
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/directives/forum.js"></script>
         <!-- endbuild -->
+
+        <script>
+         // Remove loading overlay when 
+          document.querySelector('body').addEventListener("polymer-ready", function(e) { 
+            var overlay = document.getElementById('overlay');
+            if (overlay) {
+              overlay.className= "overlay-out";
+              setTimeout(function() {
+                  var overlay = document.getElementById('overlay');
+                  if (overlay) {
+                    overlay.parentNode.removeChild(overlay);
+                  } 
+              }, 1000);
+            }
+          });
+        </script>
 </body>
 </html>

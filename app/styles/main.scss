@@ -81,6 +81,38 @@ core-drawer-panel[narrow] button {
   margin-bottom: 10px;
 }
 
+#overlay {
+  background-color: #5379a3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-out {
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: 1s;
+  animation-name: fadeOut;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeOut { 
+  0% { opacity: 1; }
+  20% { opacity: 0.9; }
+  40% { opacity: 0.5; }
+  60% { opacity: 0.3; }
+  80% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  20% { opacity: 0.9; }
+  40% { opacity: 0.5; }
+  60% { opacity: 0.3; }
+  80% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
 #forumTab {
   ul {
      list-style:none;

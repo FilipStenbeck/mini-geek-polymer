@@ -64,7 +64,7 @@
       loaderVisible : 'block',
 
       ready: function() {
-      
+         document.querySelector('body').dispatchEvent(new CustomEvent("polymer-ready"));
       },
 
       handleResponse: function (event) {
