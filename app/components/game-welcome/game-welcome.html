@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="game-welcome">
+  <link rel="import" href="../../bower_components/twbs-grid/src/twbs-grid.html">
+  <template>
+
+    <link rel="stylesheet" href="game-welcome.css" />
+    <content></content>
+
+    <h1>Mini Geek</h1>
+    <img src="../../images/Geek_Head.png"></img>
+    <div>An unofficial <a href="http://www.boardgamegeek.com" target="top">Boardgamegeek</a> mobile web site</div>
+    
+  </template>
+
+  <script>
+
+    Polymer('game-welcome', {
+      ready: function() {
+         document.querySelector('body').dispatchEvent(new CustomEvent("polymer-ready"));
+      }
+    });
+
+  </script>
+
+</polymer-element>
