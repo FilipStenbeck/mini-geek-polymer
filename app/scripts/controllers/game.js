@@ -21,7 +21,7 @@ angular.module('miniGeekPolymerApp')
     
     //Visibility of tab content
     $scope.handleTabClicked = function($event) {
-		$scope.infoTab = false;
+		  $scope.infoTab = false;
 	    $scope.forumTab = false;
 	    $scope.videoTab = false;  		
 	  	$scope[$event.target.id] = true;
@@ -30,12 +30,15 @@ angular.module('miniGeekPolymerApp')
 
     //Forum  
     var updateForum = function (data) {
-        console.log(data.result);
         $scope.forumList = data.result;
     };
     
     $scope.forumHeader = '<p> Forum </p>';
     
+    $scope.showUpArrow = function() {
+      return !($scope.forumHeader === '<p> Forum </p>');  
+    };
+
     $scope.getNextForumPost = function (id, leaf, title) {
         if (!leaf) {
             GeekService.prev_node = GeekService.selected_node;

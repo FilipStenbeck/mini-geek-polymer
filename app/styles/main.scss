@@ -92,6 +92,12 @@ core-drawer-panel[narrow] button {
       border-bottom : 2px solid #5379a3; 
     }
   }
+  core-icon {
+    float: left;
+  }
+  #forum-header {
+    cursor: pointer;
+  }
 }
 
 @media only screen and (min-width: 641px) {  
