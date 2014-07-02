@@ -12,14 +12,12 @@
 
     <core-ajax
       id="ajax"
-      auto
       url="http://mini-geek-service.appspot.com/videolist?id={{gameId}}"
       params='{"alt":"json"}'
       handleAs="json"
       on-core-response="{{handleResponse}}">
     </core-ajax>
     
-
     <bs-container>
       <bs-row> 
         <bs-col xs="12" sm="10" md="10" lg="10">
@@ -43,7 +41,8 @@
       
       result : [],
       loaderVisible : 'block',
-
+      loaded : false,
+      
       handleResponse: function (event) {
         this.loaderVisible = 'none';
         this.result = this.$.ajax.response.result.map(function(video) {
@@ -51,6 +50,13 @@
           return video; 
         });
 
+      },
+
+      load: function () {
+        if (!this.loaded) {
+          this.$.ajax.go();
+          this.loaded = true;
+        }
       },
 
       onGameClicked: function (event) {

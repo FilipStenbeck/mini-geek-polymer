@@ -24,6 +24,12 @@ angular.module('miniGeekPolymerApp')
 	    $scope.forumTab = false;
 	    $scope.videoTab = false;  		
 	  	$scope[$event.target.id] = true;
+
+      //if video is pressed tell component to load videos
+      if ($scope.videoTab) {
+        document.querySelector('game-video').load();
+      }
+
   	};
   	
  });
